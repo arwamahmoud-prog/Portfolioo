@@ -859,8 +859,26 @@ footer { background-color: var(--bg-color); padding: 2rem 0; border-top: 1px sol
     .footer-content { justify-content: center; text-align: center; }
     #cursor-glow { display: none; }
 }
-
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
     .js .reveal { opacity: 1; translate: 0 0; }
 }
+
+/* Mobile: closer to the desktop look */
+@media (max-width: 768px) {
+    .skills-grid, .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .card { padding: 1.4rem 0.9rem; }
+    .card h3 { font-size: 1.05rem; }
+    .card p { font-size: 0.9rem; }
+    .edu-item { flex-direction: row; padding: 1.2rem; gap: 1rem; }
+    .edu-icon { width: 50px; height: 50px; font-size: 1.4rem; }
+    .form-row { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+    .skills-grid, .services-grid { grid-template-columns: 1fr; }
+}
+
