@@ -7,7 +7,6 @@
     <meta name="theme-color" content="#0b1120">
     <title>Arwa Mahmoud | Full Stack .NET Developer</title>
 
-    <!-- Prevents content from being hidden if JS is slow -->
     <script>document.documentElement.classList.add('js');</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +27,6 @@
 
             <nav>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#education">Education</a></li>
@@ -54,7 +52,7 @@
 
         <div class="container hero-content">
             <span class="hero-tag reveal">👋 Welcome to my portfolio</span>
-            <h1 class="reveal" data-delay="100">Hi, I'm <span class="gradient-text">Arwa Mahmoud</span></h1>
+            <h1 class="reveal" data-delay="100"><span class="gradient-text">Arwa Mahmoud</span></h1>
             <h2 class="reveal" data-delay="200">
                 <span id="typing"></span><span class="cursor">|</span>
             </h2>
@@ -129,11 +127,42 @@
     <section id="education" class="section">
         <div class="container">
             <h2 class="section-title reveal">Education</h2>
-            <div class="education-badge reveal">
-                <i class="fas fa-graduation-cap"></i>
-                <div>
-                    <h4>B.Sc. in Computers and Information Technology</h4>
-                    <p>Egyptian E-Learning University (EELU) | Class of 2026</p>
+
+            <div class="edu-list">
+                <!-- Degree -->
+                <div class="edu-item reveal">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-body">
+                        <span class="edu-tag">Degree</span>
+                        <h4>B.Sc. in Computers and Information Technology</h4>
+                        <p class="edu-sub">Egyptian E-Learning University (EELU) | Class of 2026</p>
+                    </div>
+                </div>
+
+                <!-- Graduation Project -->
+                <div class="edu-item edu-featured reveal">
+                    <div class="edu-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="edu-body">
+                        <span class="edu-tag">Graduation Project</span>
+                        <h4>AI-Based Online Exams Protection</h4>
+                        <p>Designed and developed an intelligent monitoring system utilizing Computer Vision to ensure academic integrity in digital assessment environments, automatically detecting anomalous behaviors during online exams.</p>
+                        <div class="chips left">
+                            <span>Artificial Intelligence</span>
+                            <span>Computer Vision</span>
+                            <span>Exam Integrity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mahara Tech -->
+                <div class="edu-item reveal">
+                    <div class="edu-icon"><i class="fab fa-python"></i></div>
+                    <div class="edu-body">
+                        <span class="edu-tag">Course | 2026</span>
+                        <h4>Python Programming Basics</h4>
+                        <p class="edu-sub">Mahara Tech</p>
+                        <p>Learned Python programming fundamentals to broaden my programming and problem-solving foundation.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -183,19 +212,19 @@
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-date">2024</span>
-                        <h3>Frontend Web Development</h3>
-                        <h4>SEF Academy</h4>
-                        <p>Developed interactive, responsive web applications using modern HTML, CSS, and JavaScript, focusing on UI/UX best practices and mobile-first design.</p>
+                        <span class="timeline-date">2025</span>
+                        <h3>Networking Essentials</h3>
+                        <h4>CCNA</h4>
+                        <p>Acquired strong foundational knowledge in Switching, Routing, and Wireless Essentials to broaden system architecture understanding.</p>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-date">2025 - 2026</span>
-                        <h3>Networking & Python Basics</h3>
-                        <h4>CCNA (2025) & Mahara Tech (2026)</h4>
-                        <p>Acquired strong foundational knowledge in Switching, Routing, Wireless Essentials, and Python programming to broaden system architecture understanding.</p>
+                        <span class="timeline-date">2024</span>
+                        <h3>Frontend Web Development</h3>
+                        <h4>SEF Academy</h4>
+                        <p>Developed interactive, responsive web applications using modern HTML, CSS, and JavaScript, focusing on UI/UX best practices and mobile-first design.</p>
                     </div>
                 </div>
             </div>
@@ -238,42 +267,99 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section section-alt">
+    <section id="contact" class="section section-alt contact-section">
         <div class="container">
             <h2 class="section-title reveal">Get In Touch</h2>
+
+            <div class="availability reveal">
+                <span class="pulse-dot"></span>
+                Open to job opportunities &amp; freelance projects
+            </div>
+
             <div class="contact-wrapper">
+                <!-- Left: info + cards -->
                 <div class="contact-info reveal reveal-left">
-                    <h3>Let's build something great together.</h3>
-                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+                    <h3>Let's build something <span class="gradient-text">great together.</span></h3>
+                    <p>Have a project in mind, a job opportunity, or just want to say hi? Send me a message and I'll get back to you as soon as possible.</p>
 
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:arwamahmoudfci2023@gmail.com">arwamahmoudfci2023@gmail.com</a>
-                    </div>
+                    <div class="contact-cards">
+                        <a href="mailto:arwamahmoudfci2023@gmail.com" class="contact-card">
+                            <span class="cc-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="cc-text"><small>Email</small>arwamahmoudfci2023@gmail.com</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
 
-                    <div class="social-links">
-                        <a href="https://github.com/arwamahmoud-prog" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/arwa-mahmoud-091619393" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <!-- WhatsApp: ضعي رقمك بمفتاح الدولة بدون + أو أصفار، مثال: 201012345678 -->
-                        <a href="https://wa.me/20XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/20XXXXXXXXXX" target="_blank" rel="noopener" class="contact-card wa">
+                            <span class="cc-icon"><i class="fab fa-whatsapp"></i></span>
+                            <span class="cc-text"><small>WhatsApp</small>Chat with me</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/arwa-mahmoud-091619393" target="_blank" rel="noopener" class="contact-card li">
+                            <span class="cc-icon"><i class="fab fa-linkedin-in"></i></span>
+                            <span class="cc-text"><small>LinkedIn</small>Arwa Mahmoud</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
+
+                        <a href="https://github.com/arwamahmoud-prog" target="_blank" rel="noopener" class="contact-card gh">
+                            <span class="cc-icon"><i class="fab fa-github"></i></span>
+                            <span class="cc-text"><small>GitHub</small>arwamahmoud-prog</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
+
                         <!-- Facebook: ضعي رابط حسابك -->
-                        <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="Facebook" class="fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" rel="noopener" class="contact-card fb">
+                            <span class="cc-icon"><i class="fab fa-facebook-f"></i></span>
+                            <span class="cc-text"><small>Facebook</small>Follow me</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
                     </div>
                 </div>
 
-                <form class="contact-form reveal reveal-right" action="https://formsubmit.co/arwamahmoudfci2023@gmail.com" method="POST">
+                <!-- Right: form -->
+                <form id="contact-form"
+                      class="contact-form reveal reveal-right"
+                      action="https://formsubmit.co/arwamahmoudfci2023@gmail.com"
+                      method="POST"
+                      data-ajax="https://formsubmit.co/ajax/arwamahmoudfci2023@gmail.com">
+
+                    <div class="form-head">
+                        <h4>Send me a message</h4>
+                        <p>I usually reply within 24 hours.</p>
+                    </div>
+
+                    <!-- FormSubmit settings -->
                     <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_subject" value="New message from your portfolio">
-                    <div class="input-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+                    <!-- Honeypot: حماية من السبام، سيبيه فاضي -->
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="f-name">Name</label>
+                            <input type="text" id="f-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="f-email">Email</label>
+                            <input type="email" id="f-email" name="email" placeholder="Your Email" required>
+                        </div>
                     </div>
+
                     <div class="input-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <label for="f-subject">Subject</label>
+                        <input type="text" id="f-subject" name="subject" placeholder="What is this about?" required>
                     </div>
+
                     <div class="input-group">
-                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <label for="f-message">Message</label>
+                        <textarea id="f-message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+
+                    <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fas fa-paper-plane"></i></button>
+
+                    <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
                 </form>
             </div>
         </div>
