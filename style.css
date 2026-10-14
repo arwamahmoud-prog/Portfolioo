@@ -811,72 +811,14 @@ footer { background-color: var(--bg-color); padding: 2rem 0; border-top: 1px sol
 .js .reveal.is-visible { opacity: 1; translate: 0 0; }
 
 /* ----------------------------------
-   Responsive
+   Reduced motion
 ---------------------------------- */
-@media (max-width: 992px) {
-    .nav-links { gap: 1.1rem; }
-    .nav-links a { font-size: 0.85rem; }
-    .contact-wrapper { grid-template-columns: 1fr; gap: 3rem; }
-}
-
-@media (max-width: 900px) {
-    #nav-toggle { display: inline-block; }
-
-    nav {
-        position: absolute;
-        top: 100%; left: 0; width: 100%;
-        background: var(--header-bg);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border-bottom: 1px solid var(--border-color);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s var(--ease);
-    }
-
-    nav.open { max-height: 500px; }
-
-    .nav-links { flex-direction: column; gap: 0; padding: 1rem 5%; }
-    .nav-links li { border-bottom: 1px solid var(--border-color); }
-    .nav-links li:last-child { border-bottom: none; }
-    .nav-links a { display: block; padding: 0.9rem 0; font-size: 1rem; }
-}
-
-@media (max-width: 768px) {
-    .section { padding: 5rem 0; }
-    .section-title { font-size: 2rem; }
-    .hero h1 { font-size: 2.8rem; }
-    .hero h2 { font-size: 1.3rem; }
-    .about-content { grid-template-columns: 1fr; gap: 3rem; }
-    .timeline::before { left: 10px; }
-    .timeline-dot { left: 1px; }
-    .timeline-item { padding-left: 45px; }
-    .edu-item { flex-direction: column; padding: 1.6rem; }
-    .form-row { grid-template-columns: 1fr; }
-    .contact-form { padding: 1.5rem; }
-    .contact-info h3 { font-size: 1.7rem; }
-    .availability { font-size: 0.82rem; text-align: center; }
-    .footer-content { justify-content: center; text-align: center; }
-    #cursor-glow { display: none; }
-}
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
     .js .reveal { opacity: 1; translate: 0 0; }
 }
 
-/* Mobile: closer to the desktop look */
-@media (max-width: 768px) {
-    .skills-grid, .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    .card { padding: 1.4rem 0.9rem; }
-    .card h3 { font-size: 1.05rem; }
-    .card p { font-size: 0.9rem; }
-    .edu-item { flex-direction: row; padding: 1.2rem; gap: 1rem; }
-    .edu-icon { width: 50px; height: 50px; font-size: 1.4rem; }
-    .form-row { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-}
-
-
-
+/* ----------------------------------
+   Fixed desktop layout on every screen
+---------------------------------- */
+html, body { min-width: 1200px; }
