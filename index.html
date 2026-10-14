@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arwa Mahmoud - Full Stack .NET Developer. Portfolio showcasing skills, projects and experience.">
+    <meta name="theme-color" content="#0b1120">
     <title>Arwa Mahmoud | Full Stack .NET Developer</title>
-    
-    <!-- Google Fonts: Poppins -->
+
+    <!-- Prevents content from being hidden if JS is slow -->
+    <script>document.documentElement.classList.add('js');</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
-    <header>
+    <div id="scroll-progress"></div>
+    <div id="cursor-glow"></div>
+
+    <!-- Header -->
+    <header id="header">
         <div class="container header-container">
             <a href="#home" class="logo">Arwa<span>.</span></a>
+
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -34,34 +38,52 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">
-                <i class="fas fa-sun"></i>
-            </button>
+
+            <div class="header-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode"><i class="fas fa-sun"></i></button>
+                <button id="nav-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+            </div>
         </div>
     </header>
 
-    <!-- 1. Hero Section (Home) -->
-    <section id="home" class="hero fade-in-section">
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <canvas id="particles"></canvas>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+
         <div class="container hero-content">
-            <h1> <span>Arwa Mahmoud</span></h1>
-            <h2>Aspiring Full-Stack .NET Developer</h2>
-            <p>A passionate Computer and Information Technology graduate dedicated to crafting robust web solutions, solving complex problems, and exploring the intersections of software development and artificial intelligence.</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
+            <span class="hero-tag reveal">👋 Welcome to my portfolio</span>
+            <h1 class="reveal" data-delay="100">Hi, I'm <span class="gradient-text">Arwa Mahmoud</span></h1>
+            <h2 class="reveal" data-delay="200">
+                <span id="typing"></span><span class="cursor">|</span>
+            </h2>
+            <p class="reveal" data-delay="300">A passionate Computer and Information Technology graduate dedicated to crafting robust web solutions, solving complex problems, and exploring the intersections of software development and artificial intelligence.</p>
+            <div class="hero-btns reveal" data-delay="400">
+                <a href="#projects" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
                 <a href="#contact" class="btn btn-outline">Contact Me</a>
             </div>
+            <div class="hero-social reveal" data-delay="500">
+                <a href="https://github.com/arwamahmoud-prog" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/arwa-mahmoud-091619393" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:arwamahmoudfci2023@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
+
+        <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
     </section>
 
-    <!-- 2. About Section -->
-    <section id="about" class="about fade-in-section">
+    <!-- About -->
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title reveal">About Me</h2>
             <div class="about-content">
-                <div class="about-image">
-                    <img src="profile.jpg" alt="Arwa Mahmoud">
+                <div class="about-image reveal reveal-left">
+                    <div class="image-frame">
+                        <img src="profile.jpg" alt="Arwa Mahmoud">
+                    </div>
                 </div>
-                <div class="about-text">
+                <div class="about-text reveal reveal-right">
                     <p>As a recent graduate from the Egyptian E-Learning University (EELU) with a solid foundation in Information Technology, I bring a deep enthusiasm for Full-Stack .NET development and cutting-edge technologies.</p>
                     <p>My core philosophy centers on continuous learning and rapid adaptation. I thrive on translating theoretical knowledge into practical, high-impact projects. Whether developing seamless frontend interfaces or architecting robust backend logic using C# and .NET, I leverage a versatile skill set spanning from AI to SQL to deliver efficient, scalable, and user-centric applications.</p>
                 </div>
@@ -69,45 +91,45 @@
         </div>
     </section>
 
-    <!-- 3. Skills Section -->
-    <section id="skills" class="skills fade-in-section">
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title reveal">Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="card tilt reveal" data-delay="0">
                     <i class="fas fa-code"></i>
                     <h3>Frontend Development</h3>
-                    <p>HTML5, CSS3, JavaScript, React.js, Bootstrap</p>
+                    <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>Bootstrap</span></div>
                 </div>
-                <div class="skill-card">
+                <div class="card tilt reveal" data-delay="100">
                     <i class="fas fa-server"></i>
                     <h3>Backend & Programming</h3>
-                    <p>C#, .NET Ecosystem, C++, Python</p>
+                    <div class="chips"><span>C#</span><span>.NET</span><span>C++</span><span>Python</span></div>
                 </div>
-                <div class="skill-card">
+                <div class="card tilt reveal" data-delay="200">
                     <i class="fas fa-database"></i>
                     <h3>Data & Databases</h3>
-                    <p>SQL, Relational Database Management</p>
+                    <div class="chips"><span>SQL</span><span>Relational DBMS</span></div>
                 </div>
-                <div class="skill-card">
+                <div class="card tilt reveal" data-delay="300">
                     <i class="fas fa-brain"></i>
                     <h3>AI & Computer Vision</h3>
-                    <p>Artificial Intelligence, Machine Learning, Computer Vision Algorithms</p>
+                    <div class="chips"><span>Artificial Intelligence</span><span>Machine Learning</span><span>Computer Vision</span></div>
                 </div>
-                <div class="skill-card">
+                <div class="card tilt reveal" data-delay="400">
                     <i class="fas fa-tools"></i>
                     <h3>Tools & Version Control</h3>
-                    <p>Git, GitHub, Agile Methodologies</p>
+                    <div class="chips"><span>Git</span><span>GitHub</span><span>Agile</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Education Section -->
-    <section id="education" class="about fade-in-section" style="padding: 4rem 0; background-color: var(--bg-color-alt);">
+    <!-- Education -->
+    <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-badge" style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h2 class="section-title reveal">Education</h2>
+            <div class="education-badge reveal">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
                     <h4>B.Sc. in Computers and Information Technology</h4>
@@ -117,57 +139,60 @@
         </div>
     </section>
 
-    <!-- 5. Projects Section (Empty placeholders) -->
-    <section id="projects" class="services fade-in-section">
+    <!-- Projects -->
+    <section id="projects" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title reveal">Projects</h2>
             <div class="services-grid">
-                <!-- Project 1 Placeholder -->
-                <div class="service-card" style="border: 2px dashed #ccc; box-shadow: none;">
-                    <i class="fas fa-laptop-code" style="color: #ccc;"></i>
+                <div class="card card-dashed tilt reveal" data-delay="0">
+                    <i class="fas fa-laptop-code"></i>
                     <h3>Project Title 1</h3>
                     <p>Project description, technologies used, and links will be uploaded here soon.</p>
+                    <span class="soon-badge">Coming Soon</span>
                 </div>
-                <!-- Project 2 Placeholder -->
-                <div class="service-card" style="border: 2px dashed #ccc; box-shadow: none;">
-                    <i class="fas fa-server" style="color: #ccc;"></i>
+                <div class="card card-dashed tilt reveal" data-delay="150">
+                    <i class="fas fa-server"></i>
                     <h3>Project Title 2</h3>
                     <p>Project description, technologies used, and links will be uploaded here soon.</p>
+                    <span class="soon-badge">Coming Soon</span>
                 </div>
-                <!-- Project 3 Placeholder -->
-                <div class="service-card" style="border: 2px dashed #ccc; box-shadow: none;">
-                    <i class="fas fa-mobile-alt" style="color: #ccc;"></i>
+                <div class="card card-dashed tilt reveal" data-delay="300">
+                    <i class="fas fa-mobile-alt"></i>
                     <h3>Project Title 3</h3>
                     <p>Project description, technologies used, and links will be uploaded here soon.</p>
+                    <span class="soon-badge">Coming Soon</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Experience Section -->
-    <section id="experience" class="experience fade-in-section" style="background-color: var(--bg-color-alt);">
+    <!-- Experience -->
+    <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title reveal">Experience</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <span class="timeline-date">2026</span>
                         <h3>Full Stack .NET Training</h3>
-                        <h4>Digital Egypt Pioneers Initiative (DEPI) | 2026</h4>
+                        <h4>Digital Egypt Pioneers Initiative (DEPI)</h4>
                         <p>Completed intensive training focused on enterprise-level web development using the .NET framework, mastering MVC architecture, APIs, and database integration.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
                         <h3>Frontend Web Development</h3>
-                        <h4>SEF Academy | 2024</h4>
+                        <h4>SEF Academy</h4>
                         <p>Developed interactive, responsive web applications using modern HTML, CSS, and JavaScript, focusing on UI/UX best practices and mobile-first design.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
+                        <span class="timeline-date">2025 - 2026</span>
                         <h3>Networking & Python Basics</h3>
                         <h4>CCNA (2025) & Mahara Tech (2026)</h4>
                         <p>Acquired strong foundational knowledge in Switching, Routing, Wireless Essentials, and Python programming to broaden system architecture understanding.</p>
@@ -177,22 +202,22 @@
         </div>
     </section>
 
-    <!-- 7. Services Section -->
-    <section id="services" class="services fade-in-section">
+    <!-- Services -->
+    <section id="services" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Professional Services</h2>
+            <h2 class="section-title reveal">Professional Services</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="card tilt reveal" data-delay="0">
                     <i class="fas fa-laptop-code"></i>
                     <h3>Frontend Development</h3>
                     <p>Creating highly responsive, accessible, and user-friendly web interfaces using modern frontend technologies.</p>
                 </div>
-                <div class="service-card">
+                <div class="card tilt reveal" data-delay="150">
                     <i class="fab fa-microsoft"></i>
                     <h3>.NET Project Development</h3>
                     <p>Building secure, scalable, and high-performance web-based projects utilizing the robust .NET ecosystem.</p>
                 </div>
-                <div class="service-card">
+                <div class="card tilt reveal" data-delay="300">
                     <i class="fas fa-lightbulb"></i>
                     <h3>Custom Solutions Development</h3>
                     <p>Transforming complex requirements and innovative ideas into fully functional, practical software applications.</p>
@@ -201,45 +226,44 @@
         </div>
     </section>
 
-    <!-- Career Objective Section (Kept untouched before Contact) -->
-    <section id="objective" class="objective fade-in-section">
+    <!-- Career Objective -->
+    <section id="objective" class="section">
         <div class="container">
-            <div class="objective-box">
+            <div class="objective-box reveal">
+                <i class="fas fa-quote-left quote-icon"></i>
                 <h2>Career Objective</h2>
                 <p>"To establish a dynamic career as a Full-Stack .NET Developer, continuously refining my technical expertise, gaining real-world experience, and contributing to innovative applications that solve complex, real-world challenges."</p>
             </div>
         </div>
     </section>
 
-    <!-- 8. Contact Section -->
-    <section id="contact" class="contact fade-in-section">
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title reveal">Get In Touch</h2>
             <div class="contact-wrapper">
-                <div class="contact-info">
+                <div class="contact-info reveal reveal-left">
                     <h3>Let's build something great together.</h3>
                     <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-                    
+
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
                         <a href="mailto:arwamahmoudfci2023@gmail.com">arwamahmoudfci2023@gmail.com</a>
                     </div>
-                    
+
                     <div class="social-links">
-                        <a href="https://github.com/arwamahmoud-prog" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/arwa-mahmoud-091619393" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <!-- WhatsApp Link (أضيفي رقمك مفتاح الدولة بدون أصفار، مثلا: 201012345678) -->
-                        <a href="https://wa.me/20رقم_تليفونك" target="_blank" aria-label="WhatsApp" style="background-color: #25D366; color: white;"><i class="fab fa-whatsapp"></i></a>
-                        <!-- Facebook Link (أضيفي رابط حسابك) -->
-                        <a href="https://www.facebook.com/رابط_حسابك" target="_blank" aria-label="Facebook" style="background-color: #1877F2; color: white;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://github.com/arwamahmoud-prog" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/arwa-mahmoud-091619393" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- WhatsApp: ضعي رقمك بمفتاح الدولة بدون + أو أصفار، مثال: 201012345678 -->
+                        <a href="https://wa.me/20XXXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp" class="wa"><i class="fab fa-whatsapp"></i></a>
+                        <!-- Facebook: ضعي رابط حسابك -->
+                        <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" rel="noopener" aria-label="Facebook" class="fb"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
 
-                <!-- Contact Form configured to send emails to you -->
-                <form class="contact-form" action="https://formsubmit.co/arwamahmoudfci2023@gmail.com" method="POST">
-                    <!-- حقل مخفي لمنع صفحة التأكيد المزعجة والعودة لموقعك -->
+                <form class="contact-form reveal reveal-right" action="https://formsubmit.co/arwamahmoudfci2023@gmail.com" method="POST">
                     <input type="hidden" name="_captcha" value="false">
-                    
+                    <input type="hidden" name="_subject" value="New message from your portfolio">
                     <div class="input-group">
                         <input type="text" name="name" placeholder="Your Name" required>
                     </div>
@@ -249,7 +273,7 @@
                     <div class="input-group">
                         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>
