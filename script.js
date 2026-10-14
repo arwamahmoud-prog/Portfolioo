@@ -101,6 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(s => sectionObserver.observe(s));
 
+    // Clear active link when back at the top (hero)
+    window.addEventListener("scroll", () => {
+        if (window.scrollY < 200) links.forEach(l => l.classList.remove("active"));
+    }, { passive: true });
+
     /* ----------------------------------------
        7. Typing effect
     ---------------------------------------- */
@@ -248,5 +253,49 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("resize", resize);
         resize();
         draw();
+    }
+
+    /* ----------------------------------------
+       11. Contact form (AJAX via FormSubmit)
+    ---------------------------------------- */
+    const form = document.getElementById("contact-form");
+    const statusBox = document.getElementById("form-status");
+
+    if (form) {
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const EMAIL = "arwamahmoudfci2023@gmail.com";
+
+        form.addEventListener("submit", async e => {
+            e.preventDefault();
+
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            statusBox.className = "form-status";
+            statusBox.textContent = "";
+
+            try {
+                const res = await fetch(form.dataset.ajax, {
+                    method: "POST",
+                    headers: { Accept: "application/json" },
+                    body: new FormData(form)
+                });
+                const data = await res.json();
+
+                if (res.ok && (data.success === true || data.success === "true")) {
+                    statusBox.className = "form-status success";
+                    statusBox.innerHTML = "<i class='fas fa-check-circle'></i> Thank you! Your message has been sent. I'll get back to you soon.";
+                    form.reset();
+                } else {
+                    throw new Error(data.message || "Request failed");
+                }
+            } catch (err) {
+                statusBox.className = "form-status error";
+                statusBox.innerHTML = "<i class='fas fa-exclamation-circle'></i> Something went wrong. Please email me directly at <a href='mailto:" + EMAIL + "'>" + EMAIL + "</a>";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalHTML;
+            }
+        });
     }
 });
