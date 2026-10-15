@@ -811,14 +811,6 @@ footer { background-color: var(--bg-color); padding: 2rem 0; border-top: 1px sol
 .js .reveal.is-visible { opacity: 1; translate: 0 0; }
 
 /* ----------------------------------
-   Reduced motion
----------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
-    .js .reveal { opacity: 1; translate: 0 0; }
-}
-
-/* ----------------------------------
    Responsive
 ---------------------------------- */
 @media (max-width: 992px) {
@@ -852,30 +844,23 @@ footer { background-color: var(--bg-color); padding: 2rem 0; border-top: 1px sol
 
 @media (max-width: 768px) {
     .section { padding: 5rem 0; }
-    .section-title { font-size: 2rem; margin-bottom: 3rem; }
+    .section-title { font-size: 2rem; }
     .hero h1 { font-size: 2.8rem; }
     .hero h2 { font-size: 1.3rem; }
-    .hero p { font-size: 1rem; }
     .about-content { grid-template-columns: 1fr; gap: 3rem; }
-    .about-text p { font-size: 1rem; }
     .timeline::before { left: 10px; }
     .timeline-dot { left: 1px; }
     .timeline-item { padding-left: 45px; }
-    .timeline-content { padding: 1.4rem; }
     .edu-item { flex-direction: column; padding: 1.6rem; }
     .form-row { grid-template-columns: 1fr; }
     .contact-form { padding: 1.5rem; }
     .contact-info h3 { font-size: 1.7rem; }
-    .objective-box { padding: 3rem 1.5rem; }
-    .objective-box h2 { font-size: 1.8rem; }
-    .objective-box p { font-size: 1.05rem; }
     .availability { font-size: 0.82rem; text-align: center; }
     .footer-content { justify-content: center; text-align: center; }
     #cursor-glow { display: none; }
 }
 
-@media (max-width: 480px) {
-    .hero h1 { font-size: 2.3rem; }
-    .skills-grid, .services-grid { grid-template-columns: 1fr; }
-    .hero-btns .btn { width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+    .js .reveal { opacity: 1; translate: 0 0; }
 }
