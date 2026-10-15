@@ -819,6 +819,63 @@ footer { background-color: var(--bg-color); padding: 2rem 0; border-top: 1px sol
 }
 
 /* ----------------------------------
-   Fixed desktop layout on every screen
+   Responsive
 ---------------------------------- */
-html, body { min-width: 1200px; }
+@media (max-width: 992px) {
+    .nav-links { gap: 1.1rem; }
+    .nav-links a { font-size: 0.85rem; }
+    .contact-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+@media (max-width: 900px) {
+    #nav-toggle { display: inline-block; }
+
+    nav {
+        position: absolute;
+        top: 100%; left: 0; width: 100%;
+        background: var(--header-bg);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border-color);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s var(--ease);
+    }
+
+    nav.open { max-height: 500px; }
+
+    .nav-links { flex-direction: column; gap: 0; padding: 1rem 5%; }
+    .nav-links li { border-bottom: 1px solid var(--border-color); }
+    .nav-links li:last-child { border-bottom: none; }
+    .nav-links a { display: block; padding: 0.9rem 0; font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
+    .section { padding: 5rem 0; }
+    .section-title { font-size: 2rem; margin-bottom: 3rem; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero h2 { font-size: 1.3rem; }
+    .hero p { font-size: 1rem; }
+    .about-content { grid-template-columns: 1fr; gap: 3rem; }
+    .about-text p { font-size: 1rem; }
+    .timeline::before { left: 10px; }
+    .timeline-dot { left: 1px; }
+    .timeline-item { padding-left: 45px; }
+    .timeline-content { padding: 1.4rem; }
+    .edu-item { flex-direction: column; padding: 1.6rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form { padding: 1.5rem; }
+    .contact-info h3 { font-size: 1.7rem; }
+    .objective-box { padding: 3rem 1.5rem; }
+    .objective-box h2 { font-size: 1.8rem; }
+    .objective-box p { font-size: 1.05rem; }
+    .availability { font-size: 0.82rem; text-align: center; }
+    .footer-content { justify-content: center; text-align: center; }
+    #cursor-glow { display: none; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2.3rem; }
+    .skills-grid, .services-grid { grid-template-columns: 1fr; }
+    .hero-btns .btn { width: 100%; }
+}
