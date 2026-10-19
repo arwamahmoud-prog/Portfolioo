@@ -1,385 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee shop website</title>
+    <meta name="description" content="Arwa Mahmoud - Full Stack .NET Developer. Portfolio showcasing skills, projects and experience.">
+    <meta name="theme-color" content="#0b1120">
+    <title>Arwa Mahmoud | Full Stack .NET Developer</title>
 
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>document.documentElement.classList.add('js');</script>
 
-    <!-- custom css file link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 
-    <!-- header section starts  -->
+    <div id="scroll-progress"></div>
+    <div id="cursor-glow"></div>
 
-    <header class="header">
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#home" class="logo">Arwa<span>.</span></a>
 
-        <a href="#" class="logo">
-            <img src="logo.png" alt="">
-        </a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-        <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#about">about</a>
-            <a href="#menu">menu</a>
-            <a href="#review">review</a>
-            <a href="#reservation">Reservation</a>
-            <a href="#contact">contact</a>
-            <a href="#blogs">blogs</a>
-        </nav>
-
-        <div class="icons">
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="header-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode"><i class="fas fa-sun"></i></button>
+                <button id="nav-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+            </div>
         </div>
-
-        <div class="search-form">
-            <input type="search" id="search-box" placeholder="search here...">
-            <label for="search-box" class="fas fa-search"></label>
-        </div> 
-
     </header>
 
-    <!-- header section ends -->
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <canvas id="particles"></canvas>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
 
-    <!-- home section starts  -->
-
-    <section class="home" id="home">
-
-        <div class="content">
-            <h3>Online coffee Shop Website</h3>
-            <p>Lutrova Cafe Shop is Provide is Best Cofee in Cheap Price in Univeristy of Okara. Welcome to University
-                of Okara going to
-                Canteen and Enjoying with Your friends . Thanks</p>
-            <a href="#reservation" class="btn">Book now</a>
+        <div class="container hero-content">
+            <span class="hero-tag reveal">👋 Welcome to my portfolio</span>
+            <h1 class="reveal" data-delay="100"><span class="gradient-text">Arwa Mahmoud</span></h1>
+            <h2 class="reveal" data-delay="200">
+                <span id="typing"></span><span class="cursor">|</span>
+            </h2>
+            <p class="reveal" data-delay="300">A passionate Computer and Information Technology graduate dedicated to crafting robust web solutions, solving complex problems, and exploring the intersections of software development and artificial intelligence.</p>
+            <div class="hero-btns reveal" data-delay="400">
+                <a href="#projects" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+            <div class="hero-social reveal" data-delay="500">
+                <a href="https://github.com/arwamahmoud-prog" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/arwa-mahmoud-091619393" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:arwamahmoudfci2023@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
 
+        <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
     </section>
 
-    <!-- home section ends -->
-
-    <!-- about section starts  -->
-
-    <section class="about" id="about">
-
-        <h1 class="heading"> <span>about</span> us </h1>
-
-        <div class="row">
-
-            <div class="image">
-                <img src="about-img.jpeg" alt="">
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-content">
+                <div class="about-image reveal reveal-left">
+                    <div class="image-frame">
+                        <img src="profile.jpg" alt="Arwa Mahmoud">
+                    </div>
+                </div>
+                <div class="about-text reveal reveal-right">
+                    <p>As a recent graduate from the Egyptian E-Learning University (EELU) with a solid foundation in Information Technology, I bring a deep enthusiasm for Full-Stack .NET development and cutting-edge technologies.</p>
+                    <p>My core philosophy centers on continuous learning and rapid adaptation. I thrive on translating theoretical knowledge into practical, high-impact projects. Whether developing seamless frontend interfaces or architecting robust backend logic using C# and .NET, I leverage a versatile skill set spanning from AI to SQL to deliver efficient, scalable, and user-centric applications.</p>
+                </div>
             </div>
-
-            <div class="content">
-                <h3>what makes our coffee special?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui ea ullam, enim tempora
-                    ipsum fuga alias quae ratione a officiis id temporibus autem? Quod nemo facilis cupiditate. Ex, vel?
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis, nihil
-                    voluptas culpa! Neque consectetur obcaecati sapiente?</p>
-                <a href="#" class="btn">learn more</a>
-            </div>
-
         </div>
-
     </section>
 
-    <!-- about section ends -->
-
-    <!-- menu section starts  -->
-
-    <section class="menu" id="menu">
-
-        <h1 class="heading"> our <span>menu</span> </h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <img src="menu-1.png" alt="">
-                <h3>Fresh and Tasty</h3>
-                <div class="price">$8.99 <span>14.99</span></div>
-                <a href="#reservation" class="btn">Book</a>
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal">Skills</h2>
+            <div class="skills-grid">
+                <div class="card tilt reveal" data-delay="0">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend Development</h3>
+                    <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>Bootstrap</span></div>
+                </div>
+                <div class="card tilt reveal" data-delay="100">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend & Programming</h3>
+                    <div class="chips"><span>C#</span><span>.NET</span><span>C++</span><span>Python</span></div>
+                </div>
+                <div class="card tilt reveal" data-delay="200">
+                    <i class="fas fa-database"></i>
+                    <h3>Data & Databases</h3>
+                    <div class="chips"><span>SQL</span><span>Relational DBMS</span></div>
+                </div>
+                <div class="card tilt reveal" data-delay="300">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI & Computer Vision</h3>
+                    <div class="chips"><span>Artificial Intelligence</span><span>Machine Learning</span><span>Computer Vision</span></div>
+                </div>
+                <div class="card tilt reveal" data-delay="400">
+                    <i class="fas fa-tools"></i>
+                    <h3>Tools & Version Control</h3>
+                    <div class="chips"><span>Git</span><span>GitHub</span><span>Agile</span></div>
+                </div>
             </div>
-
-            <div class="box">
-                <img src="menu-2.png" alt="">
-                <h3>Fresh and Tasty</h3>
-                <div class="price">$10.99 <span>15.99</span></div>
-                <a href="#reservation" class="btn">Book</a>
-            </div>
-
-            <div class="box">
-                <img src="menu-3.png" alt="">
-                <h3>Fresh and Tasty</h3>
-                <div class="price">$13.99 <span>19.99</span></div>
-                <a href="#reservation" class="btn">Book</a>
-            </div>
-
-            <div class="box">
-                <img src="menu-4.png" alt="">
-                <h3>tasty and healty</h3>
-                <div class="price">$15.99 <span>20.99</span></div>
-                <a href="#reservation" class="btn">Book</a>
-            </div>
-
-            <div class="box">
-                <img src="menu-5.png" alt="">
-                <h3>tasty and healty</h3>
-                <div class="price">$15.99 <span>20.99</span></div>
-                <a href="#reservation" class="btn">Book</a>
-            </div>
-
-            <div class="box">
-                <img src="menu-6.png" alt="">
-                <h3>tasty and healty</h3>
-                <div class="price">$15.99 <span>20.99</span></div>
-                <a href="#reservation" class="btn">Book</a>
-            </div>
-
         </div>
-
     </section>
 
-    <!-- menu section ends -->
+    <!-- Education -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Education</h2>
 
-    <!-- review section starts  -->
+            <div class="edu-list">
+                <!-- Degree -->
+                <div class="edu-item reveal">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-body">
+                        <span class="edu-tag">Degree</span>
+                        <h4>B.Sc. in Computers and Information Technology</h4>
+                        <p class="edu-sub">Egyptian E-Learning University (EELU) | Class of 2026</p>
+                    </div>
+                </div>
 
-    <section class="review" id="review">
+                <!-- Graduation Project -->
+                <div class="edu-item edu-featured reveal">
+                    <div class="edu-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="edu-body">
+                        <span class="edu-tag">Graduation Project</span>
+                        <h4>AI-Based Online Exams Protection</h4>
+                        <p>Designed and developed an intelligent monitoring system utilizing Computer Vision to ensure academic integrity in digital assessment environments, automatically detecting anomalous behaviors during online exams.</p>
+                        <div class="chips left">
+                            <span>Artificial Intelligence</span>
+                            <span>Computer Vision</span>
+                            <span>Exam Integrity</span>
+                        </div>
+                    </div>
+                </div>
 
-        <h1 class="heading"> customer's <span>review</span> </h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <img src="quote-img.png" alt="" class="quote">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi
-                    nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus
-                    vel? Nemo.</p>
-                <img src="pic-1.png" class="user" alt="">
-                <h3>Ali Afzal</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                <!-- Mahara Tech -->
+                <div class="edu-item reveal">
+                    <div class="edu-icon"><i class="fab fa-python"></i></div>
+                    <div class="edu-body">
+                        <span class="edu-tag">Course | 2026</span>
+                        <h4>Python Programming Basics</h4>
+                        <p class="edu-sub">Mahara Tech</p>
+                        <p>Learned Python programming fundamentals to broaden my programming and problem-solving foundation.</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="box">
-                <img src="quote-img.png" alt="" class="quote">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi
-                    nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus
-                    vel? Nemo.</p>
-                <img src="pic-2.png" class="user" alt="">
-                <h3>Abu Bakkar</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="quote-img.png" alt="" class="quote">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi nulla sit libero nemo fuga sequi
-                    nobis? Necessitatibus aut laborum, nisi quas eaque laudantium consequuntur iste ex aliquam minus
-                    vel? Nemo.</p>
-                <img src="pic-3.png" class="user" alt="">
-                <h3>M.Ramzan</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-
         </div>
-
     </section>
 
-    <!-- review section ends -->
-    <!-- reservation section starts  -->
-         
-    <section class="contact" id="reservation">
+    <!-- Projects -->
+<section id="projects" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <div class="services-grid">
 
-        <h1 class="heading"> <span>Reservation</span> </h1>
-
-        <div class="row">
-
-            <iframe class="map" src="home-imgg.jpg" allowfullscreen="" loading="lazy"></iframe>
-
-            <form action="">
-                <h3>Book Your Table</h3>
-                <div class="inputBox">
-                   
-                    <input type="text" placeholder="Name">
+            <!-- Project 1: Coffee Shop -->
+            <div class="card project tilt reveal" data-delay="0">
+                <div class="project-thumb">
+                    <img src="coffee-preview.jpg" alt="Coffee Shop website preview" loading="lazy">
                 </div>
-                <div class="inputBox">
-                  
-                    <input type="email" placeholder="Email">
-                </div>
-                <div class="inputBox">
-                   
-                    <input type="date" placeholder="Date">
-                </div>
-                <div class="inputBox">
-                  
-                    <input type="number" placeholder="Person">
-                </div>
-                <input type="submit" value="Book Now" class="btn">
-            </form>
-
-        </div>
-
-    </section>
-
-    <!-- reservation section ends -->
-    <!-- contact section starts  -->
-
-    <section class="contact" id="contact">
-
-        <h1 class="heading"> <span>contact</span> us </h1>
-
-        <div class="row">
-
-
-            <form action="">
-                <h3>get in touch</h3>
-                <div class="inputBox">
-                   
-                    <input type="text" placeholder="Your Name">
-                </div>
-                <div class="inputBox">
-                 
-                    <input type="email" placeholder="Your Email">
-                </div>
-                <div class="inputBox">
-                    
-                    <input type="text" placeholder="Subject">
-                </div>
-                <div class="inputBox">
-                  
-                    <textarea type="textarea" placeholder="Message"></textarea>
-                </div>
-                <input type="submit" value="Send Message" class="btn">
-                <input type="reset" value="Reset" class="btn">
-            </form>
-
-        </div>
-
-    </section>
-
-    <!-- contact section ends -->
-
-    <!-- blogs section starts  -->
-
-    <section class="blogs" id="blogs">
-
-        <h1 class="heading"> our <span>blogs</span> </h1>
-
-        <div class="box-container">
-
-            <div class="box">
-                <div class="image">
-                    <img src="blog-1.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="title">tasty and refreshing coffee</a>
-                    <span>by admin / 21st may, 2021</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, dicta.</p>
-                    <a href="#" class="btn">read more</a>
+                <div class="project-body">
+                    <span class="edu-tag">Web Development</span>
+                    <h3>Coffee Shop Website</h3>
+                    <p>A fully responsive coffee shop website with a menu, customer reviews, table reservation form, contact section and blog, built with pure HTML, CSS and JavaScript.</p>
+                    <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span></div>
+                    <div class="project-links">
+                        <a href="https://github.com/arwamahmoud-prog/Coffee-Shop" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://arwamahmoud-prog.github.io/Coffee-Shop/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="box">
-                <div class="image">
-                    <img src="blog-2.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="title">tasty and refreshing coffee</a>
-                    <span>by admin / 21st may, 2021</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, dicta.</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
+            <!-- Project 2: لسه هيترفع -->
+            <div class="card card-dashed tilt reveal" data-delay="150">
+                <i class="fas fa-gamepad"></i>
+                <h3>AI Snake Game</h3>
+                <p>A Snake game that plays itself using the A* pathfinding algorithm.</p>
+                <span class="soon-badge">Coming Soon</span>
             </div>
 
-            <div class="box">
-                <div class="image">
-                    <img src="blog-3.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <a href="#" class="title">tasty and refreshing coffee</a>
-                    <span>by admin / 21st may, 2021</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, dicta.</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
+            <!-- Project 3: لسه هيترفع -->
+            <div class="card card-dashed tilt reveal" data-delay="300">
+                <i class="fas fa-language"></i>
+                <h3>Image Captioning &amp; Arabic Translation</h3>
+                <p>Generates English captions for images and translates them into Arabic.</p>
+                <span class="soon-badge">Coming Soon</span>
             </div>
 
         </div>
-
+    </div>
+</section>
+    <!-- Experience -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2026</span>
+                        <h3>Full Stack .NET Training</h3>
+                        <h4>Digital Egypt Pioneers Initiative (DEPI)</h4>
+                        <p>Completed intensive training focused on enterprise-level web development using the .NET framework, mastering MVC architecture, APIs, and database integration.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3>Networking Essentials</h3>
+                        <h4>CCNA</h4>
+                        <p>Acquired strong foundational knowledge in Switching, Routing, and Wireless Essentials to broaden system architecture understanding.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3>Frontend Web Development</h3>
+                        <h4>SEF Academy</h4>
+                        <p>Developed interactive, responsive web applications using modern HTML, CSS, and JavaScript, focusing on UI/UX best practices and mobile-first design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- blogs section ends -->
-
-    <!-- footer section starts  -->
-
-    <section class="footer">
-
-        <div class="share">
-            <a href="https://www.facebook.com/cafenashop?mibextid=ZbWKwL" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="https://www.instagram.com/cafena2024?igsh=bWplOWNyeWNjZHdq" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-            <a href="#" class="fab fa-pinterest"></a>
+    <!-- Services -->
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal">Professional Services</h2>
+            <div class="services-grid">
+                <div class="card tilt reveal" data-delay="0">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Frontend Development</h3>
+                    <p>Creating highly responsive, accessible, and user-friendly web interfaces using modern frontend technologies.</p>
+                </div>
+                <div class="card tilt reveal" data-delay="150">
+                    <i class="fab fa-microsoft"></i>
+                    <h3>.NET Project Development</h3>
+                    <p>Building secure, scalable, and high-performance web-based projects utilizing the robust .NET ecosystem.</p>
+                </div>
+                <div class="card tilt reveal" data-delay="300">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Custom Solutions Development</h3>
+                    <p>Transforming complex requirements and innovative ideas into fully functional, practical software applications.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="links">
-            <a href="#">home</a>
-            <a href="#">about</a>
-            <a href="#">menu</a>
-            <a href="#">products</a>
-            <a href="#">review</a>
-            <a href="#">contact</a>
-            <a href="#">blogs</a>
-        </div>
-
-        <div class="credit">created by <span>MsCube Tech</span> | all rights reserved</div>
-
     </section>
 
-    <!-- footer section ends -->
+    <!-- Career Objective -->
+    <section id="objective" class="section">
+        <div class="container">
+            <div class="objective-box reveal">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <h2>Career Objective</h2>
+                <p>"To establish a dynamic career as a Full-Stack .NET Developer, continuously refining my technical expertise, gaining real-world experience, and contributing to innovative applications that solve complex, real-world challenges."</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact -->
+    <section id="contact" class="section section-alt contact-section">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
 
+            <div class="availability reveal">
+                <span class="pulse-dot"></span>
+                Open to job opportunities &amp; freelance projects
+            </div>
 
+            <div class="contact-wrapper">
+                <!-- Left: info + cards -->
+                <div class="contact-info reveal reveal-left">
+                    <h3>Let's build something <span class="gradient-text">great together.</span></h3>
+                    <p>Have a project in mind, a job opportunity, or just want to say hi? Send me a message and I'll get back to you as soon as possible.</p>
 
+                    <div class="contact-cards">
+                        <a href="mailto:arwamahmoudfci2023@gmail.com" class="contact-card">
+                            <span class="cc-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="cc-text"><small>Email</small>arwamahmoudfci2023@gmail.com</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
 
+                        <!-- WhatsApp: ضعي رقمك بمفتاح الدولة بدون + أو أصفار، مثال: 201012345678 -->
+                        <a href="https://wa.me/201094182877" target="_blank" rel="noopener" class="contact-card wa">
+                            <span class="cc-icon"><i class="fab fa-whatsapp"></i></span>
+                            <span class="cc-text"><small>WhatsApp</small>Chat with me</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
 
+                        <a href="https://www.linkedin.com/in/arwa-mahmoud-091619393" target="_blank" rel="noopener" class="contact-card li">
+                            <span class="cc-icon"><i class="fab fa-linkedin-in"></i></span>
+                            <span class="cc-text"><small>LinkedIn</small>Arwa Mahmoud</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
 
+                        <a href="https://github.com/arwamahmoud-prog" target="_blank" rel="noopener" class="contact-card gh">
+                            <span class="cc-icon"><i class="fab fa-github"></i></span>
+                            <span class="cc-text"><small>GitHub</small>arwamahmoud-prog</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
 
+                        <!-- Facebook: ضعي رابط حسابك -->
+                        <a href="https://www.facebook.com/share/19tPQgNDw2/" target="_blank" rel="noopener" class="contact-card fb">
+                            <span class="cc-icon"><i class="fab fa-facebook-f"></i></span>
+                            <span class="cc-text"><small>Facebook</small>Follow me</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
+                    </div>
+                </div>
 
+                <!-- Right: form -->
+                <form id="contact-form"
+                      class="contact-form reveal reveal-right"
+                      action="https://formsubmit.co/arwamahmoudfci2023@gmail.com"
+                      method="POST"
+                      data-ajax="https://formsubmit.co/ajax/arwamahmoudfci2023@gmail.com">
 
+                    <div class="form-head">
+                        <h4>Send me a message</h4>
+                        <p>I usually reply within 24 hours.</p>
+                    </div>
 
+                    <!-- FormSubmit settings -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="New message from your portfolio">
+                    <!-- Honeypot: حماية من السبام، سيبيه فاضي -->
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="f-name">Name</label>
+                            <input type="text" id="f-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="f-email">Email</label>
+                            <input type="email" id="f-email" name="email" placeholder="Your Email" required>
+                        </div>
+                    </div>
 
+                    <div class="input-group">
+                        <label for="f-subject">Subject</label>
+                        <input type="text" id="f-subject" name="subject" placeholder="What is this about?" required>
+                    </div>
 
+                    <div class="input-group">
+                        <label for="f-message">Message</label>
+                        <textarea id="f-message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+                    </div>
 
+                    <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fas fa-paper-plane"></i></button>
 
+                    <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    <!-- custom js file link  -->
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Arwa Mahmoud. All rights reserved.</p>
+            <a href="#home" class="scroll-top"><i class="fas fa-arrow-up"></i> Back to Top</a>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
-
 </body>
-
 </html>
