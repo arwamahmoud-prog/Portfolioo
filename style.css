@@ -1,536 +1,393 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
-:root{
-    --main-color:#d3ad7f;
-    --black:#13131a;
-    --bg:#010103;
-    --border:.1rem solid rgba(255,255,255,.3);
-}
-
-*{
-    font-family: 'Roboto', sans-serif;
-    margin:0; padding:0;
-    box-sizing: border-box;
-    outline: none; border:none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
-}
-
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-padding-top: 9rem;
-    scroll-behavior: smooth;
-}
-
-html::-webkit-scrollbar{
-    width: .8rem;
-}
-
-html::-webkit-scrollbar-track{
-    background: transparent;
-}
-
-html::-webkit-scrollbar-thumb{
-    background: #fff;
-    border-radius: 5rem;
-}
-
-body{
-    background: var(--bg);
-}
-
-section{
-    padding:2rem 7%;
-}
-
-.heading{
-    text-align: center;
-    color:#fff;
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
-    font-size: 4rem;
-}
-
-.heading span{
-    color:var(--main-color);
-    text-transform: uppercase;
-}
-
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    padding:.9rem 3rem;
-    font-size: 1.7rem;
-    color:#fff;
-    background: var(--main-color);
-    cursor: pointer;
-}
-
-.btn:hover{
-    letter-spacing: .2rem;
-}
-
-.header{
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding:1.5rem 7%;
-    border-bottom: var(--border);
-    position: fixed;
-    top:0; left: 0; right: 0;
-    z-index: 1000;
-}
-
-.header .logo img{
-    height: 6rem;
-}
-
-.header .navbar a{
-    margin:0 1rem;
-    font-size: 1.6rem;
-    color:#fff;
-}
-
-.header .navbar a:hover{
-    color:var(--main-color);
-    border-bottom: .1rem solid var(--main-color);
-    padding-bottom: .5rem;
-}
-
-.header .icons div{
-    color:#fff;
-    cursor: pointer;
-    font-size: 2.5rem;
-    margin-left: 2rem;
-}
-
-.header .icons div:hover{
-    color:var(--main-color);
-}
-
-#menu-btn{
-    display: none;
-}
-
-.header .search-form{
-    position: absolute;
-    top:115%; right: 7%;
-    background: #fff;
-    width: 50rem;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    transform: scaleY(0);
-    transform-origin: top;
-}
-
-.header .search-form.active{
-    transform: scaleY(1);
-}
-
-.header .search-form input{
-    height: 100%;
-    width: 100%;
-    font-size: 1.6rem;
-    color:var(--black);
-    padding:1rem;
-    text-transform: none;
-}
-
-.header .search-form label{
-    cursor: pointer;
-    font-size: 2.2rem;
-    margin-right: 1.5rem;
-    color:var(--black);
-}
-
-.header .search-form label:hover{
-    color:var(--main-color);
-}
-
-.home{
-    height: 110vh;
-    display: flex;
-    align-items: center;
-    background:url(home-img.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.home .content{
-    max-width: 60rem;
-}
-
-.home .content h3{
-    font-size: 6rem;
-    text-transform: uppercase;
-    color:#fff;
-    font-family:Helvetica;
-}
-
-.home .content p{
-    font-size: 1.7rem;
-    font-weight: bold;
-    line-height: 1.8;
-    padding:1rem 0;
-    color:rgb(255, 255, 255);
-}
-
-/* ------------------------About ============== */
-.about .row{
-    display: flex;
-    align-items: center;
-    background:var(--black);
-    flex-wrap: wrap;
-}
-
-.about .row .image{
-    flex:1 1 45rem;
-}
-
-.about .row .image img{
-    width: 100%;
-}
-.about .row .content{
-    flex:1 1 45rem;
-    padding:2rem;
-}
-
-.about .row .content h3{
-    font-size: 3rem;
-    color:#fff;
-}
-
-.about .row .content p{
-    font-size: 1.6rem;
-    color:#ccc;
-    padding:1rem 0;
-    line-height: 1.8;
-}
- /* ------------------------------menu----------------- */
-.menu .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:1.5rem;
-}
-
-.menu .box-container .box{
-    padding:5rem;
-    text-align: center;
-    border:var(--border);    
-}
-
-.menu .box-container .box img{
-    height: 10rem;
-}
-
-.menu .box-container .box h3{
-    color: #fff;
-    font-size: 2rem;
-    padding:1rem 0;
-}
-
-.menu .box-container .box .price{
-    color: #fff;
-    font-size: 2.5rem;
-    padding:.5rem 0;
-}
-
-.menu .box-container .box .price span{
-    font-size: 1.5rem;
-    text-decoration: line-through;
-    font-weight: lighter;
-}
-
-.menu .box-container .box:hover{
-    background:#fff;
-}
-
-.menu .box-container .box:hover > *{
-    color:var(--black);
-}
-
-
-
-.review .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:1.5rem;
-}
-
-.review .box-container .box{
-    border:var(--border);
-    text-align: center;
-    padding:3rem 2rem;
-}
-
-.review .box-container .box p{
-    font-size: 1.5rem;
-    line-height: 1.8;
-    color:#ccc;
-    padding:2rem 0;
-}
-
-.review .box-container .box .user{
-    height: 7rem;
-    width: 7rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.review .box-container .box h3{
-    padding:1rem 0;
-    font-size: 2rem;
-    color:#fff;
-}
-
-.review .box-container .box .stars i{
-    font-size: 1.5rem;
-    color:var(--main-color);
-}
-
-.contact .row{
-    display: flex;
-    background:var(--black);
-    flex-wrap: wrap;
-    gap:1rem;
-}
-
-.contact .row .map{
-    flex:1 1 45rem;
-    width: 100%;
-    object-fit: cover;
-    padding: 20px 40px;
-}
-
-.contact .row form{
-    flex:1 1 45rem;
-    padding:5rem 2rem;
-    text-align: center;
-}
-
-.contact .row form h3{
-    text-transform: uppercase;
-    font-size: 3.5rem;
-    color:#fff;
-}
-
-.contact .row form .inputBox{
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    background:var(--bg);
-    border:var(--border);
-}
-
-.contact .row form .inputBox span{
-    color:#fff;
-    font-size: 2rem;
-    padding-left: 2rem;
-}
-
-.contact .row form .inputBox input{
-    width: 100%;
-    padding:2rem;
-    font-size: 1.7rem;
-    color:#fff;
-    text-transform: none;
-    background:none;
-}
-
-.contact .row form .inputBox textarea{
-    width: 100%;
-    padding:2rem;
-    font-size: 1.7rem;
-    color:#fff;
-    text-transform: none;
-    background:none;
-}
-
-.blogs .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:1.5rem;
-}
-
-.blogs .box-container .box{
-    border:var(--border);    
-}
-
-.blogs .box-container .box .image{
-    height: 25rem;
-    overflow:hidden;
-    width: 100%;
-}
-
-.blogs .box-container .box .image img{
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
-
-.blogs .box-container .box:hover .image img{
-    transform: scale(1.2);
-}
-
-.blogs .box-container .box .content{
-    padding:2rem;
-}
-
-.blogs .box-container .box .content .title{
-    font-size: 2.5rem;
-    line-height: 1.5;
-    color:#fff;
-}
-
-.blogs .box-container .box .content .title:hover{
-    color:var(--main-color);
-}
-
-.blogs .box-container .box .content span{
-    color:var(--main-color);
-    display: block;
-    padding-top: 1rem;
-    font-size: 2rem;
-}
-
-.blogs .box-container .box .content p{
-    font-size: 1.6rem;
-    line-height: 1.8;
-    color:#ccc;
-    padding:1rem 0;
-}
-
-.footer{
-    background:var(--black);
-    text-align: center;
-}
-
-.footer .share{
-    padding:1rem 0;
-}
-
-.footer .share a{
-    height: 5rem;
-    width: 5rem;
-    line-height: 5rem;
-    font-size: 2rem;
-    color:#fff;
-    border:var(--border);
-    margin:.3rem;
-    border-radius: 50%;
-}
-
-.footer .share a:hover{
-    background-color: var(--main-color);
-}
-
-.footer .links{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding:2rem 0;
-    gap:1rem;
-}
-
-.footer .links a{
-    padding:.7rem 2rem;
-    color:#fff;
-    border:var(--border);
-    font-size: 2rem;
-}
-
-.footer .links a:hover{
-    background:var(--main-color);
-}
-
-.footer .credit{
-    font-size: 2rem;
-    color:#fff;
-    font-weight: lighter;
-    padding:1.5rem;
-}
-
-.footer .credit span{
-    color:var(--main-color);
-}
-
-
-
-/* ----------------------------------------------------------------------- */
-
-/* media queries  */
-@media (max-width:991px){
-
-    html{
-        font-size: 55%;
-    }
-
-    .header{
-        padding:1.5rem 2rem;
-    }
-
-    section{
-        padding:2rem;
-    }
-
-}
-
-@media (max-width:768px){
-
-    #menu-btn{
-        display: inline-block;
-    }
-
-    .header .navbar{
-        position: absolute;
-        top:100%; right: -100%;
-        background: #fff;
-        width: 30rem;
-        height: calc(100vh - 9.5rem);
-    }
-
-    .header .navbar.active{
-        right:0;
-    }
-
-    .header .navbar a{
-        color:var(--black);
-        display: block;
-        margin:1.5rem;
-        padding:.5rem;
-        font-size: 2rem;
-    }
-
-    .header .search-form{
-        width: 90%;
-        right: 2rem;
-    }
-
-    .home{
-        background-position: left;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .home .content h3{
-        font-size: 4.5rem;
-    }
-
-    .home .content p{
-        font-size: 1.5rem;
-    }
-
-}
-
-@media (max-width:450px){
-
-    html{
-        font-size: 50%;
-    }
-
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arwa Mahmoud - Full Stack .NET Developer. Portfolio showcasing skills, projects and experience.">
+    <meta name="theme-color" content="#0b1120">
+    <title>Arwa Mahmoud | Full Stack .NET Developer</title>
+
+    <script>document.documentElement.classList.add('js');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+    <div id="cursor-glow"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#home" class="logo">Arwa<span>.</span></a>
+
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark/Light Mode"><i class="fas fa-sun"></i></button>
+                <button id="nav-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <canvas id="particles"></canvas>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+
+        <div class="container hero-content">
+            <span class="hero-tag reveal">👋 Welcome to my portfolio</span>
+            <h1 class="reveal" data-delay="100"><span class="gradient-text">Arwa Mahmoud</span></h1>
+            <h2 class="reveal" data-delay="200">
+                <span id="typing"></span><span class="cursor">|</span>
+            </h2>
+            <p class="reveal" data-delay="300">A passionate Computer and Information Technology graduate dedicated to crafting robust web solutions, solving complex problems, and exploring the intersections of software development and artificial intelligence.</p>
+            <div class="hero-btns reveal" data-delay="400">
+                <a href="#projects" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+            <div class="hero-social reveal" data-delay="500">
+                <a href="https://github.com/arwamahmoud-prog" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/arwa-mahmoud-091619393" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:arwamahmoudfci2023@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-content">
+                <div class="about-image reveal reveal-left">
+                    <div class="image-frame">
+                        <img src="profile.jpg" alt="Arwa Mahmoud">
+                    </div>
+                </div>
+                <div class="about-text reveal reveal-right">
+                    <p>As a recent graduate from the Egyptian E-Learning University (EELU) with a solid foundation in Information Technology, I bring a deep enthusiasm for Full-Stack .NET development and cutting-edge technologies.</p>
+                    <p>My core philosophy centers on continuous learning and rapid adaptation. I thrive on translating theoretical knowledge into practical, high-impact projects. Whether developing seamless frontend interfaces or architecting robust backend logic using C# and .NET, I leverage a versatile skill set spanning from AI to SQL to deliver efficient, scalable, and user-centric applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal">Skills</h2>
+            <div class="skills-grid">
+                <div class="card tilt reveal" data-delay="0">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend Development</h3>
+                    <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>Bootstrap</span></div>
+                </div>
+                <div class="card tilt reveal" data-delay="100">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend & Programming</h3>
+                    <div class="chips"><span>C#</span><span>.NET</span><span>C++</span><span>Python</span></div>
+                </div>
+                <div class="card tilt reveal" data-delay="200">
+                    <i class="fas fa-database"></i>
+                    <h3>Data & Databases</h3>
+                    <div class="chips"><span>SQL</span><span>Relational DBMS</span></div>
+                </div>
+                <div class="card tilt reveal" data-delay="300">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI & Computer Vision</h3>
+                    <div class="chips"><span>Artificial Intelligence</span><span>Machine Learning</span><span>Computer Vision</span></div>
+                </div>
+                <div class="card tilt reveal" data-delay="400">
+                    <i class="fas fa-tools"></i>
+                    <h3>Tools & Version Control</h3>
+                    <div class="chips"><span>Git</span><span>GitHub</span><span>Agile</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Education</h2>
+
+            <div class="edu-list">
+                <!-- Degree -->
+                <div class="edu-item reveal">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-body">
+                        <span class="edu-tag">Degree</span>
+                        <h4>B.Sc. in Computers and Information Technology</h4>
+                        <p class="edu-sub">Egyptian E-Learning University (EELU) | Class of 2026</p>
+                    </div>
+                </div>
+
+                <!-- Graduation Project -->
+                <div class="edu-item edu-featured reveal">
+                    <div class="edu-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="edu-body">
+                        <span class="edu-tag">Graduation Project</span>
+                        <h4>AI-Based Online Exams Protection</h4>
+                        <p>Designed and developed an intelligent monitoring system utilizing Computer Vision to ensure academic integrity in digital assessment environments, automatically detecting anomalous behaviors during online exams.</p>
+                        <div class="chips left">
+                            <span>Artificial Intelligence</span>
+                            <span>Computer Vision</span>
+                            <span>Exam Integrity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mahara Tech -->
+                <div class="edu-item reveal">
+                    <div class="edu-icon"><i class="fab fa-python"></i></div>
+                    <div class="edu-body">
+                        <span class="edu-tag">Course | 2026</span>
+                        <h4>Python Programming Basics</h4>
+                        <p class="edu-sub">Mahara Tech</p>
+                        <p>Learned Python programming fundamentals to broaden my programming and problem-solving foundation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+<section id="projects" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <div class="services-grid">
+
+            <!-- Project 1: Coffee Shop -->
+            <div class="card project tilt reveal" data-delay="0">
+                <div class="project-thumb">
+                    <img src="coffee-preview.jpg" alt="Coffee Shop website preview" loading="lazy">
+                </div>
+                <div class="project-body">
+                    <span class="edu-tag">Web Development</span>
+                    <h3>Coffee Shop Website</h3>
+                    <p>A fully responsive coffee shop website with a menu, customer reviews, table reservation form, contact section and blog, built with pure HTML, CSS and JavaScript.</p>
+                    <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span></div>
+                    <div class="project-links">
+                        <a href="https://github.com/arwamahmoud-prog/Coffee-Shop" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://arwamahmoud-prog.github.io/Coffee-Shop/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: لسه هيترفع -->
+            <div class="card card-dashed tilt reveal" data-delay="150">
+                <i class="fas fa-gamepad"></i>
+                <h3>AI Snake Game</h3>
+                <p>A Snake game that plays itself using the A* pathfinding algorithm.</p>
+                <span class="soon-badge">Coming Soon</span>
+            </div>
+
+            <!-- Project 3: لسه هيترفع -->
+            <div class="card card-dashed tilt reveal" data-delay="300">
+                <i class="fas fa-language"></i>
+                <h3>Image Captioning &amp; Arabic Translation</h3>
+                <p>Generates English captions for images and translates them into Arabic.</p>
+                <span class="soon-badge">Coming Soon</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <!-- Experience -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2026</span>
+                        <h3>Full Stack .NET Training</h3>
+                        <h4>Digital Egypt Pioneers Initiative (DEPI)</h4>
+                        <p>Completed intensive training focused on enterprise-level web development using the .NET framework, mastering MVC architecture, APIs, and database integration.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h3>Networking Essentials</h3>
+                        <h4>CCNA</h4>
+                        <p>Acquired strong foundational knowledge in Switching, Routing, and Wireless Essentials to broaden system architecture understanding.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024</span>
+                        <h3>Frontend Web Development</h3>
+                        <h4>SEF Academy</h4>
+                        <p>Developed interactive, responsive web applications using modern HTML, CSS, and JavaScript, focusing on UI/UX best practices and mobile-first design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title reveal">Professional Services</h2>
+            <div class="services-grid">
+                <div class="card tilt reveal" data-delay="0">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Frontend Development</h3>
+                    <p>Creating highly responsive, accessible, and user-friendly web interfaces using modern frontend technologies.</p>
+                </div>
+                <div class="card tilt reveal" data-delay="150">
+                    <i class="fab fa-microsoft"></i>
+                    <h3>.NET Project Development</h3>
+                    <p>Building secure, scalable, and high-performance web-based projects utilizing the robust .NET ecosystem.</p>
+                </div>
+                <div class="card tilt reveal" data-delay="300">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Custom Solutions Development</h3>
+                    <p>Transforming complex requirements and innovative ideas into fully functional, practical software applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Objective -->
+    <section id="objective" class="section">
+        <div class="container">
+            <div class="objective-box reveal">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <h2>Career Objective</h2>
+                <p>"To establish a dynamic career as a Full-Stack .NET Developer, continuously refining my technical expertise, gaining real-world experience, and contributing to innovative applications that solve complex, real-world challenges."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt contact-section">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+
+            <div class="availability reveal">
+                <span class="pulse-dot"></span>
+                Open to job opportunities &amp; freelance projects
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Left: info + cards -->
+                <div class="contact-info reveal reveal-left">
+                    <h3>Let's build something <span class="gradient-text">great together.</span></h3>
+                    <p>Have a project in mind, a job opportunity, or just want to say hi? Send me a message and I'll get back to you as soon as possible.</p>
+
+                    <div class="contact-cards">
+                        <a href="mailto:arwamahmoudfci2023@gmail.com" class="contact-card">
+                            <span class="cc-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="cc-text"><small>Email</small>arwamahmoudfci2023@gmail.com</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
+
+                        <!-- WhatsApp: ضعي رقمك بمفتاح الدولة بدون + أو أصفار، مثال: 201012345678 -->
+                        <a href="https://wa.me/201094182877" target="_blank" rel="noopener" class="contact-card wa">
+                            <span class="cc-icon"><i class="fab fa-whatsapp"></i></span>
+                            <span class="cc-text"><small>WhatsApp</small>Chat with me</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/arwa-mahmoud-091619393" target="_blank" rel="noopener" class="contact-card li">
+                            <span class="cc-icon"><i class="fab fa-linkedin-in"></i></span>
+                            <span class="cc-text"><small>LinkedIn</small>Arwa Mahmoud</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
+
+                        <a href="https://github.com/arwamahmoud-prog" target="_blank" rel="noopener" class="contact-card gh">
+                            <span class="cc-icon"><i class="fab fa-github"></i></span>
+                            <span class="cc-text"><small>GitHub</small>arwamahmoud-prog</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
+
+                        <!-- Facebook: ضعي رابط حسابك -->
+                        <a href="https://www.facebook.com/share/19tPQgNDw2/" target="_blank" rel="noopener" class="contact-card fb">
+                            <span class="cc-icon"><i class="fab fa-facebook-f"></i></span>
+                            <span class="cc-text"><small>Facebook</small>Follow me</span>
+                            <i class="fas fa-arrow-right cc-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: form -->
+                <form id="contact-form"
+                      class="contact-form reveal reveal-right"
+                      action="https://formsubmit.co/arwamahmoudfci2023@gmail.com"
+                      method="POST"
+                      data-ajax="https://formsubmit.co/ajax/arwamahmoudfci2023@gmail.com">
+
+                    <div class="form-head">
+                        <h4>Send me a message</h4>
+                        <p>I usually reply within 24 hours.</p>
+                    </div>
+
+                    <!-- FormSubmit settings -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="New message from your portfolio">
+                    <!-- Honeypot: حماية من السبام، سيبيه فاضي -->
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="f-name">Name</label>
+                            <input type="text" id="f-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="f-email">Email</label>
+                            <input type="email" id="f-email" name="email" placeholder="Your Email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="f-subject">Subject</label>
+                        <input type="text" id="f-subject" name="subject" placeholder="What is this about?" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="f-message">Message</label>
+                        <textarea id="f-message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fas fa-paper-plane"></i></button>
+
+                    <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Arwa Mahmoud. All rights reserved.</p>
+            <a href="#home" class="scroll-top"><i class="fas fa-arrow-up"></i> Back to Top</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
